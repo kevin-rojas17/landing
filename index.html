@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transmisión en Vivo - Simulación</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="video-section">
+            <div class="live-indicator">
+                <span class="pulse"></span>
+                <span class="live-text">EN VIVO</span>
+            </div>
+            <video id="videoPlayer" autoplay playsinline disablepictureinpicture>
+                <source src="stream.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
+            </video>
+            <div class="video-info">
+                <h1>Transmisión en Vivo</h1>
+                <div class="live-stats">
+                    <span id="liveTime">00:00:00</span>
+                    <span class="separator">•</span>
+                    <span id="viewerCount">0 espectadores</span>
+                </div>
+            </div>
+        </div>
+        <div class="chat-section">
+            <div class="chat-header">
+                <h2>Chat en Vivo</h2>
+                <div class="bot-indicator">
+                    <span class="bot-status active"></span>
+                    <span>Bot Activo</span>
+                </div>
+            </div>
+            
+            <div id="commentsArea" class="comments-area">
+                <div class="system-message">
+                    ¡Bienvenido a la transmisión en vivo! El bot leerá tus comentarios.
+                </div>
+            </div>
+            <form id="commentForm" class="comment-form">
+                <input 
+                    type="text" 
+                    id="usernameInput" 
+                    placeholder="Tu nombre" 
+                    maxlength="20"
+                    required
+                >
+                <input 
+                    type="text" 
+                    id="commentInput" 
+                    placeholder="Escribe un comentario..." 
+                    maxlength="200"
+                    required
+                >
+                <button type="submit">Enviar</button>
+            </form>
+            <div class="bot-controls">
+                <button id="toggleVoice" class="btn-voice">🔊 Voz Activada</button>
+                <span class="bot-reading" id="botStatus">Esperando comentarios...</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
